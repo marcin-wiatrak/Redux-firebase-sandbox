@@ -1,8 +1,10 @@
-export const todoReducer = (state = ['obiad'], action) => {
+export const todoReducer = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TODO':
-            console.log(state);
-            return [...state, action.payload];
+            return state;
+
+        case 'DELETE_TODO':
+            return state;
         default:
             return state;
     }

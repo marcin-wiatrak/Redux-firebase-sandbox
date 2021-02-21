@@ -1,13 +1,12 @@
-export const addTodo = (project) => {
+export const deleteTodo = (id) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firestore = getFirestore();
         firestore
             .collection('todos')
-            .add({
-                ...project,
-            })
+            .doc(id)
+            .delete()
             .then(() => {
-                dispatch({ type: 'ADD_TODO', project });
+                dispatch({ type: 'DELETE_TODO', id });
             })
             .catch((err) => {
                 // dispatch({ type: 'CREATE_PROJECT_ERROR', err });
