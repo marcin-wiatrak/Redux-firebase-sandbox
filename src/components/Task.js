@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 const Task = ({ title, id }) => {
     const dispatch = useDispatch();
-
+    console.log('dupa');
     return <div onClick={() => dispatch(deleteTodo(id))}>{title}</div>;
 };
 
